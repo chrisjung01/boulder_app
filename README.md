@@ -1,6 +1,10 @@
 # boulder
 
-A new Flutter project.
+A new Flutter project, this project is used to test some libraries like: 
+
+- [Riverpod](https://pub.dev/packages/flutter_riverpod)
+- [GoRouter](https://pub.dev/packages/go_router)
+- [Hive](https://pub.dev/packages/hive)
 
 ## Getting Started
 
