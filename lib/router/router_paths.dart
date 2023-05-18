@@ -3,4 +3,6 @@ class RouterPaths {
 
   static const home = '/';
   static const addWorkout = '/addworkout';
+  static const provider = '/provider';
+  static const stateProvider = '/stateprovider';
 }

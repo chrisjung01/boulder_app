@@ -1,8 +1,13 @@
-import 'package:boulder/core/router.dart';
+import 'package:boulder/addworkout/presentation/add_workout_notifier/workout_notifier.dart';
+import 'package:boulder/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final addWorkoutProvider =
+    StateNotifierProvider<WorkoutNotifier, int>((ref) => WorkoutNotifier(0));
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

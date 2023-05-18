@@ -1,5 +1,9 @@
+import 'package:boulder/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
+import '../router/router_names.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,19 +21,65 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Boulder app - Version 2'),
+                const Text('Boulder app - Version 2'),
+                Consumer(
+                  builder: (context, ref, _) {
+                    final counter = ref.watch(addWorkoutProvider);
+                    return Text('Workouts: $counter');
+                  },
+                ),
                 Container(
                   height: 20,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    context.pushNamed('addWorkout');
-                  },
-                  child: Text('Add workout'),
-                ),
+                _addWorkout(context),
+                const ProviderButton(),
+                const StateProvider(),
               ],
             ),
           ),
         ));
+  }
+
+// bad practices this should be a widget
+  ElevatedButton _addWorkout(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        context.pushNamed(RouterNames.addWorkout);
+      },
+      child: const Text('Add workout'),
+    );
+  }
+}
+
+class StateProvider extends StatelessWidget {
+  const StateProvider({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        context.pushNamed(RouterNames.stateProvider);
+      },
+      child: const Text('StateProvider'),
+    );
+  }
+}
+
+// good practices. This is how it should work
+class ProviderButton extends StatelessWidget {
+  const ProviderButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        context.pushNamed(RouterNames.provider);
+      },
+      child: const Text('Provider'),
+    );
   }
 }
