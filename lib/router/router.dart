@@ -1,4 +1,5 @@
 import 'package:boulder/addworkout/workout_screen.dart';
+import 'package:boulder/futureprovider/future_provider_screen.dart';
 import 'package:boulder/provider/provider_screen.dart';
 import 'package:boulder/router/router_names.dart';
 import 'package:boulder/router/router_paths.dart';
@@ -28,6 +29,11 @@ final GoRouter router = GoRouter(
       path: RouterPaths.stateProvider,
       builder: (context, state) => const StateProviderScreen(),
       name: RouterNames.stateProvider,
+    ),
+    GoRoute(
+      path: RouterPaths.futureProvider,
+      builder: (context, state) => const FutureProviderScreen(),
+      name: RouterNames.futureProvider,
     )
   ],
 );

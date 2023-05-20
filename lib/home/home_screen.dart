@@ -34,6 +34,7 @@ class HomeScreen extends StatelessWidget {
                 _addWorkout(context),
                 const ProviderButton(),
                 const StateProvider(),
+                const FutureProviderButton(),
               ],
             ),
           ),
@@ -80,6 +81,22 @@ class ProviderButton extends StatelessWidget {
         context.pushNamed(RouterNames.provider);
       },
       child: const Text('Provider'),
+    );
+  }
+}
+
+class FutureProviderButton extends StatelessWidget {
+  const FutureProviderButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        context.pushNamed(RouterNames.futureProvider);
+      },
+      child: const Text('FutureProvider'),
     );
   }
 }

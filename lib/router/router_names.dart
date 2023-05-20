@@ -5,4 +5,5 @@ class RouterNames {
   static const addWorkout = 'addWorkout';
   static const provider = 'provider';
   static const stateProvider = 'stateProvider';
+  static const futureProvider = 'futureProvider';
 }
