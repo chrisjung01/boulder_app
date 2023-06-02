@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 
 import '../home/home_screen.dart';
 import '../stateprovider/state_provider_screen.dart';
+import '../streamprovider/stream_provider_screen.dart';
 
 final GoRouter router = GoRouter(
   routes: <RouteBase>[
@@ -34,6 +35,11 @@ final GoRouter router = GoRouter(
       path: RouterPaths.futureProvider,
       builder: (context, state) => const FutureProviderScreen(),
       name: RouterNames.futureProvider,
+    ),
+    GoRoute(
+      path: RouterPaths.streamProvider,
+      builder: (context, state) => const StreamProviderScreen(),
+      name: RouterNames.streamProvider,
     )
   ],
 );

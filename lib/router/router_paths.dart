@@ -6,4 +6,5 @@ class RouterPaths {
   static const provider = '/provider';
   static const stateProvider = '/stateprovider';
   static const futureProvider = '/futureprovider';
+  static const streamProvider = '/streamprovider';
 }

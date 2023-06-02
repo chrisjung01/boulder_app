@@ -6,4 +6,5 @@ class RouterNames {
   static const provider = 'provider';
   static const stateProvider = 'stateProvider';
   static const futureProvider = 'futureProvider';
+  static const streamProvider = 'streamProvider';
 }
