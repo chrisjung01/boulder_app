@@ -3,6 +3,8 @@ import 'package:boulder/futureprovider/services/suggestions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'future_provider.dart';
+
 final suggestionsFutureProvider =
     FutureProvider.autoDispose<Suggestions>((ref) async {
   final apiService = ref.watch(apiServiceProvider);
@@ -14,7 +16,10 @@ class FutureProviderScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final suggestionsRef = ref.watch(suggestionsFutureProvider);
+    // a simple test with random int value
+    final suggestionsRef = ref.watch(configurationsProvider);
+    // sample with api call
+    // final suggestionsRef = ref.watch(suggestionsFutureProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -22,10 +27,25 @@ class FutureProviderScreen extends ConsumerWidget {
         title: const Text('FutureProvider'),
       ),
       body: Center(
-        child: suggestionsRef.when(
-          data: (data) => Text(data.price.toString()),
-          error: (error, stackTrace) => Text(error.toString()),
-          loading: () => const CircularProgressIndicator(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            suggestionsRef.when(
+              // a simple test with random int value
+              data: (data) => Text(data),
+              // sample with api call
+              // data: (data) => Text(data.activity ?? ''),
+              error: (error, stackTrace) => Text(error.toString()),
+              loading: () => const CircularProgressIndicator(),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () => ref.refresh(configurationsProvider.future),
+              child: const Text('Refresh data'),
+            )
+          ],
         ),
       ),
     );
