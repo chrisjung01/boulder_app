@@ -1,4 +1,5 @@
 import 'package:boulder/addworkout/workout_screen.dart';
+import 'package:boulder/changenotifierprovider/change_notifier_provider_screen.dart';
 import 'package:boulder/futureprovider/future_provider_screen.dart';
 import 'package:boulder/provider/provider_screen.dart';
 import 'package:boulder/router/router_names.dart';
@@ -40,6 +41,11 @@ final GoRouter router = GoRouter(
       path: RouterPaths.streamProvider,
       builder: (context, state) => const StreamProviderScreen(),
       name: RouterNames.streamProvider,
+    ),
+    GoRoute(
+      path: RouterPaths.changeNotifierProvider,
+      builder: (context, state) => const ChangeNotifierProviderScreen(),
+      name: RouterNames.changeNotifierProvider,
     )
   ],
 );

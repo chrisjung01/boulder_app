@@ -7,4 +7,5 @@ class RouterPaths {
   static const stateProvider = '/stateprovider';
   static const futureProvider = '/futureprovider';
   static const streamProvider = '/streamprovider';
+  static const changeNotifierProvider = '/changenotifierprovider';
 }

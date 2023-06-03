@@ -36,6 +36,7 @@ class HomeScreen extends StatelessWidget {
                 const StateProvider(),
                 const FutureProviderButton(),
                 const StreamProviderButton(),
+                const ChangeNotifierProviderButton(),
               ],
             ),
           ),
@@ -114,6 +115,22 @@ class StreamProviderButton extends StatelessWidget {
         context.pushNamed(RouterNames.streamProvider);
       },
       child: const Text('StreamProvider'),
+    );
+  }
+}
+
+class ChangeNotifierProviderButton extends StatelessWidget {
+  const ChangeNotifierProviderButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        context.pushNamed(RouterNames.changeNotifierProvider);
+      },
+      child: const Text('ChangeNotifierProvider'),
     );
   }
 }
