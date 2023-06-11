@@ -1,4 +1,4 @@
-import 'package:boulder/provider/provider.dart';
+import 'package:boulder/provider/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

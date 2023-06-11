@@ -1,14 +1,14 @@
 import 'package:boulder/addworkout/workout_screen.dart';
-import 'package:boulder/changenotifierprovider/change_notifier_provider_screen.dart';
-import 'package:boulder/futureprovider/future_provider_screen.dart';
-import 'package:boulder/provider/provider_screen.dart';
 import 'package:boulder/router/router_names.dart';
 import 'package:boulder/router/router_paths.dart';
 import 'package:go_router/go_router.dart';
 
 import '../home/home_screen.dart';
-import '../stateprovider/state_provider_screen.dart';
-import '../streamprovider/stream_provider_screen.dart';
+import '../provider/changenotifierprovider/change_notifier_provider_screen.dart';
+import '../provider/futureprovider/future_provider_screen.dart';
+import '../provider/provider/provider_screen.dart';
+import '../provider/stateprovider/state_provider_screen.dart';
+import '../provider/streamprovider/stream_provider_screen.dart';
 
 final GoRouter router = GoRouter(
   routes: <RouteBase>[

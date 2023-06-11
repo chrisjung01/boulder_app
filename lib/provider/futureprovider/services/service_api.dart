@@ -1,4 +1,4 @@
-import 'package:boulder/futureprovider/services/suggestions.dart';
+import 'package:boulder/provider/futureprovider/services/suggestions.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

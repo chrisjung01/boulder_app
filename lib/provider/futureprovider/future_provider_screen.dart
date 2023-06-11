@@ -1,5 +1,5 @@
-import 'package:boulder/futureprovider/services/service_api.dart';
-import 'package:boulder/futureprovider/services/suggestions.dart';
+import 'package:boulder/provider/futureprovider/services/service_api.dart';
+import 'package:boulder/provider/futureprovider/services/suggestions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
